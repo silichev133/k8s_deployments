@@ -17,6 +17,15 @@ spec:
         image: nginx:1.14.2
         ports:
         - containerPort: 80
+# Следующие строки применимы в рамках задачи по kubernertes начиная с 7 пункта как один из вариантов применения cm
+#        volumeMounts:
+#        - name: config
+#          mountPath: /etc/nginx/conf.d
+#
+#      volumes:
+#      - name: config
+#        configMap:
+#          name: my-configmap
 
 ---
 
