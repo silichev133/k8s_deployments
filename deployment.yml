@@ -26,7 +26,7 @@ spec:
 #      - name: config
 #        configMap:
 #          name: my-configmap
-# Следующие строки применимы в рамках задачи по kubernertes начиная с 9 пункта
+# Следующие строки применимы в рамках задачи по kubernertes начиная с 9 пункта (это в рамках динамического изменения)
 #        volumeMounts:
 #        - name: index_file
 #          mountPath: /tmp
@@ -68,4 +68,28 @@ data:
             return 200 '$hostname\n';
         }
     }
+---
 
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: task-pv-volume 
+  spec:
+    storageClassName: manual 
+    accessModes:
+      - ReadWriteOnce 
+    hostPath:
+      path: /test  
+      
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: task-pvc-volume
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: manual
