@@ -26,6 +26,15 @@ spec:
 #      - name: config
 #        configMap:
 #          name: my-configmap
+# Следующие строки применимы в рамках задачи по kubernertes начиная с 9 пункта
+#        volumeMounts:
+#        - name: index_file
+#          mountPath: /tmp
+#
+#      volumes:
+#      - name: index_file
+#        hostPath:
+#          path: /test
 
 ---
 
