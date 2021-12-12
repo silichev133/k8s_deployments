@@ -35,6 +35,15 @@ spec:
 #      - name: index_file
 #        hostPath:
 #          path: /test
+# Следующие строки применимы в рамках задачи по kubernertes начиная с 11 пункта
+#        volumeMounts:
+#        - name: hostpath-privileged
+#          mountPath: /tmp
+#
+#      volumes:
+#      - name: hostpath-privileged
+#        persistentVolumeClaim:
+#          claimName: task-pvc-volume
 
 ---
 
